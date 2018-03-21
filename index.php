@@ -5,6 +5,37 @@
 	<title>Test Bdd Php</title>
 </head>
 <body>
+
+<form action="affichage.php" method="post">
+	<input type="text" name="nom" placeholder="Nom ?">
+	<input type="submit">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <?php 
 	// affichage des données saisies dans la table members de phpMyAdmin
 	$bdd = new PDO('mysql:host=localhost;dbname=rezalps', 'root', 'Admin2018', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -33,9 +64,7 @@
  	$bdd->exec($a_suppr);
 
 ?>
-
-
-
+ -->
 
 
 
