@@ -14,17 +14,23 @@
 		echo '<p> l\'utilisateur numéro ' . $mes_donnees['id'] . ' de Rezalps nommé ' . '<strong>' . $mes_donnees['name'] . '</strong>' . ' a comme email : ' . $mes_donnees['email'] . '</p>';
 	}
 
-	// affichage d'une donnée de l'utilisateur qui a l'id numero 3
-	$amodifier = $bdd->query('SELECT * FROM members WHERE id="5"');
-	while ($mes_donnees2 = $amodifier->fetch()) {
-		echo '<h1>' . $mes_donnees2['name'] . '</h1>';
-	}
 
 	// insertion d'un nouvel utilisateur dans la table members
 	$ainserer = "INSERT INTO members (name, email, password, city, birthdate, phone_number, sub_date, entreprise, siret) VALUES ('Cyril', 'monmail@test.fr', 'Azerty25', 'Valence', '02021978', '0603020105', '200320181621', '0', '0')";
 	$bdd->exec($ainserer);
 
+	// affichage d'une donnée de l'utilisateur qui a l'id numero 3
+	$recup_one_id = $bdd->query('SELECT * FROM members WHERE id="5"');
+	while ($mes_donnees2 = $recup_one_id->fetch()) {
+		echo '<h1>' . $mes_donnees2['name'] . '</h1>';
+	}
+ 	
+ 	// modification d'un utilisateur
+ 	$a_modifier = "UPDATE members SET name='Melissa' WHERE id='5'";
+ 	$bdd->exec($a_modifier);
 
+ 	$a_suppr = "DELETE FROM members WHERE id in (5,6,7)";
+ 	$bdd->exec($a_suppr);
 
 ?>
 
